@@ -1,0 +1,22 @@
+version: '3.4'
+
+services: 
+  nodeweb:
+    image: nodeweb
+    build:
+      context: nodeweb
+      dockerfile: ./nodeweb/Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 7777:3000
+  
+  angularfront:
+    image: angularfront
+    build:
+      context: angularfront
+      dockerfile: ./angularfront/Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 4200:3000

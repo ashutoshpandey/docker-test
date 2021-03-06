@@ -1,0 +1,12 @@
+# NodeJS specific #
+.nyc_output/
+coverage/
+nodeweb/node_modules/
+angularfront/node_modules/
+npm-debug.log
+test/*.log
+*.log
+public/pdfs/*
+dist
+.env
+.node-persist
