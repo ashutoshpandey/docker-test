@@ -21,8 +21,8 @@ export class AppComponent {
     async getData() {
         let that = this;
 
-        this.httpClient.get('http://localhost:7777/get-data').pipe(map(this.extractData)).subscribe((result) => {
-            that.data = result;
+        this.httpClient.get('http://localhost:7777/get-data').pipe(map(this.extractData)).subscribe((result: any) => {
+            that.data = result && result.data ? result.data : 'Cannot read';
         });
     }
 

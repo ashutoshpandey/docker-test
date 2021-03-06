@@ -2,6 +2,7 @@ version: '3.4'
 
 services: 
   nodeweb:
+    container_name: nodeweb
     image: nodeweb
     build:
       context: nodeweb
@@ -12,6 +13,7 @@ services:
       - 7777:3000
   
   angularfront:
+    container_name: angularfront
     image: angularfront
     build:
       context: angularfront
@@ -19,4 +21,6 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 4200:3000
+      - 4200:80
+    depends_on: 
+      - nodeweb
